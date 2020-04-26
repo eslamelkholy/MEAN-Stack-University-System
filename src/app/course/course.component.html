@@ -1,1 +1,28 @@
-<p>course works!</p>
+<div class="container">
+  <button class="btn btn-primary" (click)="showAddNewCourseComponent()">Add New Student</button>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of Courses;let i=index">
+        <td>{{ course._id }}</td>
+        <td>{{ course.Name }}</td>
+        <td>
+          <a class="btn btn-primary operations"
+            (click)="showDetails(course._id)">Details</a>
+          <a class="btn btn-secondary operations" (click)="editCourse(course._id)">Edit</a>
+          <a class="btn btn-danger operations" (click)="deleteCourse(course._id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>
+    
+  </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from '../_service/course.service';
+import { Course } from '../_models/course';
 
 @Component({
   selector: 'app-course',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseComponent implements OnInit {
 
-  constructor() { }
-
+  Courses:Course[];
+  constructor(public CourseService:CourseService
+  
+  ) {}
   ngOnInit(): void {
+    this.CourseService.getAllCourses().subscribe(myCoursesData => {
+      this.Courses = myCoursesData;
+    });
+  }
+
+  showAddNewCourseComponent()
+  {
+
+  }
+  showDetails(id:number)
+  {
+
+  }
+  editCourse(id:number)
+  {
+
+  }
+  deleteCourse(id:number)
+  {
+
   }
 
 }

@@ -14,6 +14,7 @@ import { DetailsComponent } from './department/details/details.component';
 import { EditComponent } from './department/edit/edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CourseComponent } from './course/course.component';
+import { CourseAddComponent } from './course/course-add/course-add.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -25,7 +26,8 @@ import { CourseComponent } from './course/course.component';
 		AddComponent,
 		DetailsComponent,
 		EditComponent,
-		CourseComponent
+		CourseComponent,
+		CourseAddComponent
 	],
 	imports: [
 		BrowserModule,
