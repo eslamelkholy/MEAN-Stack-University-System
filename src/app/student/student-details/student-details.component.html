@@ -1,0 +1,8 @@
+<ul class="list-group col-7">
+    <li class="list-group-item active">Student Details 
+        <a class="btn btn-danger" style="float: right;" (click) = "removeAllUiComponent()" >X</a>
+    </li>
+    <li class="list-group-item list-group-item-info">{{ std_service.currentStudent._id }}</li>
+    <li class="list-group-item list-group-item-info">{{ std_service.currentStudent.Name }}</li>
+    <li class="list-group-item list-group-item-info">{{ std_service.currentStudent.Email }}</li>
+  </ul>

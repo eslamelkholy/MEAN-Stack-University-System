@@ -1,0 +1,27 @@
+<div class="container">
+    <button class="btn btn-success mb-4" (click)="showAddDeptComponent()">Add Department</button>
+    <table class="table table-dark">
+        <thead class="thead-inverse text-center">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let department of Departments ; let i = index">
+                <td>{{department._id}}</td>
+                <td>{{department.Name}}</td>
+                <td>
+                    <button class="btn btn-dark mr-1 operations" (click)="showDetails(department._id)">Details</button>
+                    <button class="btn btn-info mr-1 operatons" (click)="showEdit(department._id)" >Edit</button>
+                    <button class="btn btn-danger operatons" (click)="deleteDepartment(department._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <app-add *ngIf="department_service.showDepartmentController == 1"></app-add>
+    <app-edit *ngIf="department_service.showDepartmentController == 3" [updatedDepartment] = "department_service.currentDepartment" ></app-edit>
+    <app-details *ngIf="department_service.showDepartmentController == 2"></app-details>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <form class="col-7">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Student ID</label>
+            <input type="text"  class="form-control" name="id" id="exampleInputEmail1" [(ngModel)]="newStudent._id">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Student Name</label>
+            <input type="text" class="form-control" name="Name" id="exampleInputPassword1" [(ngModel)] = "newStudent.Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Student Email</label>
+            <input type="text" class="form-control" name="Email" id="exampleInputPassword1" [(ngModel)] = "newStudent.Email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Student Department</label>
+            <select class="form-control" name="Department" [(ngModel)] = "newStudent.Department">
+                <option *ngFor="let dept of Departments" [value]="dept._id">
+                    {{dept.Name}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success" (click) = "addNewStudent()">Add Student</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <button class="btn btn-primary" (click)="showAddNewComponent()">Add New Student</button>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let std of students;let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ std._id }}</td>
+        <td>{{ std.Name }}</td>
+        <td>{{ std.Email }}</td>
+        <td>
+          <a class="btn btn-primary operations"
+            (click)="showDetails(std._id)">Details</a>
+          <a class="btn btn-secondary operations" (click)="editStudentDetails(std._id)">Edit</a>
+          <a class="btn btn-danger operations" (click)="deleteStudent(std._id)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div>
+    <app-student-edit *ngIf="student_service.showComponentController == 3"
+      [myUpdatedStudent]="student_service.currentStudent"></app-student-edit>
+    <app-student-add *ngIf="student_service.showComponentController == 2"></app-student-add>
+    <app-student-details *ngIf="student_service.showComponentController == 1"></app-student-details>
+  </div>
+</div>
