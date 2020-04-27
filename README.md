@@ -1,3 +1,3 @@
 # MEAN STACK University System
-## Simple University Simple Project Using MEAN Stack
+## Simple University Project Using MEAN Stack
 
