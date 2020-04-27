@@ -39,6 +39,10 @@ export class StudentComponent implements OnInit {
   }
   ngOnInit():void
   {
-    this.student_service.getAllStudents().subscribe(a => this.students = a);
+    this.student_service.getAllStudents().subscribe(a =>{
+      this.students = a;
+      console.log(a);
+    });
+
   }
 }

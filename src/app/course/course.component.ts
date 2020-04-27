@@ -21,19 +21,16 @@ export class CourseComponent implements OnInit {
 
   showAddNewCourseComponent()
   {
-
-  }
-  showDetails(id:number)
-  {
-
+    this.CourseService.showCourseController = 1;
   }
   editCourse(id:number)
   {
-
+    this.CourseService.getCourse(id).subscribe(myCourse => this.CourseService.currentCourse = myCourse);
+    this.CourseService.showCourseController = 2;
   }
   deleteCourse(id:number)
   {
-
+    this.CourseService.deleteCourse(id).subscribe(res => console.log(res));
   }
 
 }

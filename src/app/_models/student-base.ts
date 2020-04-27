@@ -4,5 +4,6 @@ export class StudentBase {
         public Name?: string, 
         public Email?: string,
         public Department?:number,
+        public Courses?:number,
     ){}
 }

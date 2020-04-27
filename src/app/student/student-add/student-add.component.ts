@@ -4,6 +4,8 @@ import { StudentService } from '../../_service/student.service';
 import { Router } from '@angular/router';
 import {DepartmentService} from '../../_service/department.service';
 import { DepartmentBase } from 'src/app/_models/department-base';
+import { Course } from 'src/app/_models/course';
+import { CourseService } from 'src/app/_service/course.service';
 
 @Component({
 	selector: 'app-student-add',
@@ -13,10 +15,11 @@ import { DepartmentBase } from 'src/app/_models/department-base';
 export class StudentAddComponent implements OnInit {
   newStudent:StudentBase = new StudentBase();
   Departments:DepartmentBase[] = [];
-
+  Courses:Course[] = [];
   constructor(private student_service : StudentService,
     private r:Router,
-    private deptService:DepartmentService
+    private deptService:DepartmentService,
+    private courseService:CourseService
     ) {}
 
   addNewStudent()
@@ -29,6 +32,8 @@ export class StudentAddComponent implements OnInit {
     this.deptService.getAllDepartments().subscribe(Depts => {
       this.Departments = Depts;
     })
+    this.courseService.getAllCourses().subscribe(myCourses => this.Courses = myCourses);
+    
   }
 
 

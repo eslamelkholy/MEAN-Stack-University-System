@@ -1,0 +1,13 @@
+<div class="container">
+    <form class="col-7">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Course ID</label>
+            <input type="text"  class="form-control" name="id" id="exampleInputEmail1" [(ngModel)]="myCourse._id">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Course Name</label>
+            <input type="text" class="form-control" name="Name" id="exampleInputPassword1" [(ngModel)] = "myCourse.Name">
+        </div>
+        <button class="btn btn-success" (click) = "updateCourse()">Update Course</button>
+    </form>
+</div>

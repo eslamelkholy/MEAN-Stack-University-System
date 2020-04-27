@@ -15,6 +15,7 @@ import { EditComponent } from './department/edit/edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CourseComponent } from './course/course.component';
 import { CourseAddComponent } from './course/course-add/course-add.component';
+import { CourseEditComponent } from './course/course-edit/course-edit.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -27,7 +28,8 @@ import { CourseAddComponent } from './course/course-add/course-add.component';
 		DetailsComponent,
 		EditComponent,
 		CourseComponent,
-		CourseAddComponent
+		CourseAddComponent,
+		CourseEditComponent
 	],
 	imports: [
 		BrowserModule,

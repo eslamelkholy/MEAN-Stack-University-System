@@ -1,5 +1,5 @@
 <div class="container">
-  <button class="btn btn-primary" (click)="showAddNewCourseComponent()">Add New Student</button>
+  <button class="btn btn-primary" (click)="showAddNewCourseComponent()">Add New Course</button>
   <table class="table table-dark">
     <thead>
       <tr>
@@ -13,9 +13,7 @@
         <td>{{ course._id }}</td>
         <td>{{ course.Name }}</td>
         <td>
-          <a class="btn btn-primary operations"
-            (click)="showDetails(course._id)">Details</a>
-          <a class="btn btn-secondary operations" (click)="editCourse(course._id)">Edit</a>
+          <a class="btn btn-primary operations" (click)="editCourse(course._id)">Edit</a>
           <a class="btn btn-danger operations" (click)="deleteCourse(course._id)">Delete</a>
         </td>
       </tr>
@@ -23,6 +21,7 @@
   </table>
   <br>
   <div>
-    
+    <app-course-add *ngIf="CourseService.showCourseController == 1"></app-course-add>
+    <app-course-edit [myCourse] = "CourseService.currentCourse" *ngIf="CourseService.showCourseController == 2"></app-course-edit>
   </div>
 </div>

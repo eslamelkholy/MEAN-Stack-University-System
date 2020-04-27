@@ -11,5 +11,21 @@
         <label for="exampleInputPassword1">Student Email</label>
         <input type="text" class="form-control" name="email" id="exampleInputPassword1" [(ngModel)] ="myUpdatedStudent.Email" >
     </div>
+    <div class="form-group">
+            <label for="exampleInputPassword1">Student Department</label>
+            <select class="form-control" name="Department" [(ngModel)] = "myUpdatedStudent.Department">
+                <option *ngFor="let dept of Departments" [value]="dept._id" [attr.selected]="dept.Name == myUpdatedStudent.Department ? true : null">
+                    {{dept.Name}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Student Department</label>
+            <select class="form-control" name="Courses" [(ngModel)] = "myUpdatedStudent.Courses" multiple>
+                <option *ngFor="let course of Courses" [value]="course._id">
+                    {{course.Name}}
+                </option>
+            </select>
+        </div>
     <button class="btn btn-success" (click) = "updateStudentValue()" >Save Changes</button>
 </form>
